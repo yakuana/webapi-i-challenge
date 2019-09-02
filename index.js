@@ -54,7 +54,7 @@ server.get('/api/users/:id', (req, res) => {
     if (id) {
         db.findById(id)
             .then(user => {
-                res.status(201).json(user);
+                res.status(200).json(user);
             })
             .catch(err => {
                 res.status(404).json({
@@ -76,7 +76,7 @@ server.delete('/api/users/:id', (req, res) => {
     if (id) {
         db.remove(id) 
         .then(user => {
-            res.status(201).json(user)
+            res.status(200).json(user)
         })
         .catch(err => {
             res.status(404).json({
